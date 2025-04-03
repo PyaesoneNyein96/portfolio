@@ -1,19 +1,41 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 import './ToggleTheme.css'
+import { toggleTheme, theme } from '../../features/themeSlice.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
 const ToggleTheme = () => {
 
-    const [light, setDark] = useState(false);
+    const Themes = useSelector(theme);
+
+    const dispatch = useDispatch();
+
+    const setTheme = () => {
+        dispatch(toggleTheme());
+    }
+
+    useEffect(() => {
+        if (Themes) {
+
+            // document.documentElement.classList.add('dark');
+            document.getElementsByTagName('body')[0].classList.add('dark');
+        } else {
+
+            // document.documentElement.classList.remove('dark');
+            document.getElementsByTagName('body')[0].classList.remove('dark');
+        }
+    }, [Themes]);
 
 
     return (
         <div>
-            <span className="mx-2">
-                {light ? "to switch light mode 🌜" : "to switch dark mode 🌞"}
-            </span>
+            {/* <span className="mx-2">
+                {Themes ? "Toggle to switch light mode 🌞 " : "Toggle to switch dark mode 🌜"}
+            </span> */}
 
 
             <label className="theme-switch">
-                <input type="checkbox" className="theme-switch__checkbox" onChange={() => setDark(!light)} />
+                <input type="checkbox" checked={Themes} className="theme-switch__checkbox" onChange={() => setTheme(!Themes)} />
                 <div className="theme-switch__container">
                     <div className="theme-switch__clouds"></div>
                     <div className="theme-switch__stars-container">
