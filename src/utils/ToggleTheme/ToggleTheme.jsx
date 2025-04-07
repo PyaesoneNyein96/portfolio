@@ -21,7 +21,7 @@ const ToggleTheme = () => {
     useEffect(() => {
 
 
-        if (isDark) {
+        if (is_dark) {
 
             // document.documentElement.classList.add('dark');
             document.getElementsByTagName('body')[0].classList.add('dark');
