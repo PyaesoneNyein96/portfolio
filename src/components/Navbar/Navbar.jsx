@@ -15,8 +15,8 @@ const Navbar = () => {
         <div className='flex justify-between'>
 
             <div className='flex bg-green-400 w-full justify-between'>
-                <h1>
-                    {/* Logo */}
+                <h1 className='bg-red-200'>
+                    Logo
                 </h1>
                 <ul className='text-sm gap-4 bg-red-700 m-1 hidden md:flex'>
                     {navList.map((l, i) =>
@@ -25,6 +25,8 @@ const Navbar = () => {
                         </li>
                     )}
                 </ul>
+            </div>
+            <div className="hidden md:flex">
                 <ToggleTheme />
             </div>
 
