@@ -7,42 +7,24 @@ const themeSlice = createSlice({
     theme: 0,
   },
   reducers: {
-toggleTheme: (state) => {
-  // console.log(state.isDark);
+    toggleTheme: (state) => {
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      // Rotate between 0 (light), 1 (dark), 2 (system)
+      state.theme = (state.theme + 1) % 3;
 
-  // Rotate through 0 (light), 1 (dark), 2 (system)
-  state.theme  = (state.theme + 1) % 3;
+      if (state.theme === 0) {
+        localStorage.setItem("theme", "light");
+        state.isDark = 0;
+      } else if (state.theme === 1) {
+        localStorage.setItem("theme", "dark");
+        state.isDark = 1;
+      } else if (state.theme === 2) {
+        localStorage.removeItem("theme");
+        state.isDark = mediaQuery.matches ? 1 : 0;
+      }
 
-
-   
-  if (state.theme === 0) {
-    localStorage.setItem('theme', 'light');
-    state.dark = 0;
-    console.log(['dark' ,state.isDark]);
-    console.log(['theme',state.theme]);
- 
-  } else if (state.theme === 1) {
-    localStorage.setItem('theme', 'dark');
-    state.dark = 1;
-    console.log(['dark' ,state.isDark]);
-    console.log(['theme',state.theme]);
- 
-  } else if (state.theme === 2) {
-    // System theme
-    localStorage.setItem('theme',null);
-    state.isDark = mediaQuery.matches ? 1 : 0;
-      console.log(['dark' ,state.isDark]);
-      console.log(['theme',state.theme]);
-    
-    // Optional: update state based on actual system theme
-  }
-// console.log(['dark' ,state.isDark]);
-// console.log(['theme',state.theme]);
- 
- 
-},
+    },
 
     setInitialTheme: (state) =>{
       const localTheme = localStorage.getItem('theme');
