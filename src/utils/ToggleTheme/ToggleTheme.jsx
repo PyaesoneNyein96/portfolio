@@ -9,9 +9,7 @@ import Night from '../../../public/night.png'
 import System from '../../../public/operational-system.png'
 
 
-
 const ToggleTheme = () => {
-
 
     const is_dark = useSelector(isDark);
     const Theme = useSelector(theme);
@@ -23,7 +21,6 @@ const ToggleTheme = () => {
     }
 
     useEffect(() => {
-
 
         if (is_dark) {
             // document.documentElement.classList.add('dark');
@@ -37,9 +34,7 @@ const ToggleTheme = () => {
 
     return (
 
-
         <div onClick={() => setTheme()}>
-
             <div className="like-button">
                 <img
                     src={Theme == 2 ? System : (Theme == 1 ? Night : Day)}
@@ -47,7 +42,6 @@ const ToggleTheme = () => {
                     className="theme-icon"
                 />
             </div>
-
         </div>
 
 

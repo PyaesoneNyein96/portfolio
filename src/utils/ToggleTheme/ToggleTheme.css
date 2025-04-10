@@ -21,7 +21,7 @@
   right: -4px;
   bottom: -4px;
   border-radius: 20px;
-  background: rgba(0, 123, 255, 0.8); /* Blue color */
+  background: rgba(3, 24, 46, 0.842); /* Blue color */
   filter: blur(8px);
   z-index: -1;
 }

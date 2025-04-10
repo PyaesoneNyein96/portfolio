@@ -30,9 +30,12 @@ const themeSlice = createSlice({
       const localTheme = localStorage.getItem('theme');
       if(localTheme){
         state.isDark = localTheme === 'dark' ? 1 : 0;
+        state.theme = localTheme === 'dark' ? 1 : 0;
       }else{
+        
         let mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
         mediaQuery.matches ? state.isDark = 1 : state.isDark = 0;
+        mediaQuery.matches ? state.theme = 2 : state.theme = 2;
       }
       
     },

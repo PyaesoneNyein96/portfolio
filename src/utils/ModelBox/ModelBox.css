@@ -1,0 +1,17 @@
+.modelBox-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba(211, 185, 236, 0.007);
+  padding: 10%;
+}
+
+/* .model-box {
+  position: relative;
+  background-color: red;
+  padding: 10px;
+  border-radius: 10px;
+} */
