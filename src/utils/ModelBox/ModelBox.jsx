@@ -17,9 +17,9 @@ const ModelBox = () => {
     }
 
     const render = <div className="modelBox-wrap md:hidden">
-        <div className="model-box mt-10 p-2 bg-amber-700 rounded-2xl opacity-70">
+        <div className="model-box mt-10 p-2 rounded-2xl opacity-70 theme pb-10">
             <div className="model-box-top ">
-                <div className="close-model text-center text-2xl text-neutral-500 capitalize">Title blah blah</div>
+                <div className="close-model text-center text-2xl text-neutral-500 capitalize">Setting</div>
                 <ul className="model-box-content text-center text-xl">
                     {Object.entries(NavList).map(([key, l]) =>
                         <li key={key} className='my-5'>

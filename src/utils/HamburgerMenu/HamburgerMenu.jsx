@@ -20,9 +20,9 @@ const HamburgerMenu = () => {
         <div className='hamburger-wraper'>
             <input id="checkbox" type="checkbox" onChange={() => toggle()} checked={isOpen} />
             <label className="toggle" htmlFor="checkbox"  >
-                <div id="bar1" className="bars" />
-                <div id="bar2" className="bars" />
-                <div id="bar3" className="bars" />
+                <div id="bar1" className="bars bg-amber-800" />
+                <div id="bar2" className="bars bg-amber-800" />
+                <div id="bar3" className="bars bg-amber-800" />
             </label>
         </div>
 

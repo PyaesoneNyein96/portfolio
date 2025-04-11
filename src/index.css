@@ -3,10 +3,18 @@
 @theme {
   --light-bg: #f9f9f9;
   --light-text: #111827;
-  --dark-bg: #111827;
+
+  --dark-bg: #0a0e18;
   --dark-text: #f9f9f9;
+
+  --main-theme:  #8a3d06;
+  --secondary-color: #111827;
 }
 
+.example{
+  background-color:#8a3d06;
+  color: #111827;
+}
 
 
 /* System dark mode */
@@ -35,5 +43,17 @@
 body {
   background-color: var(--light-bg);
   color: var(--light-text);
+}
+
+.theme{
+  background-color: var(--secondary-color);
+  color: var(--dark-text);
+  transition: all 0.3s ease-in-out;
+}
+
+.dark-theme{
+  background-color: var(--main-theme);
+  color: var(--light-text);
+  
 }
 

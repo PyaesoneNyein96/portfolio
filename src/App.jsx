@@ -16,7 +16,6 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-
     dispatch(setInitialTheme());
     setLoadTheme(true);
   }, [dispatch])
@@ -26,7 +25,7 @@ const App = () => {
     <Router>
       <Navbar />
       {/* <RouteWatcher /> */}
-      <div className="">
+      <div className="px-5 md:px-20">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

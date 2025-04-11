@@ -23,11 +23,19 @@ const ToggleTheme = () => {
     useEffect(() => {
 
         if (is_dark) {
-            // document.documentElement.classList.add('dark');
-            document.getElementsByTagName('body')[0].classList.add('dark');
+            document.body.classList.add('dark');
+
+            const themes = document.getElementsByClassName('theme');
+            for (let el of themes) {
+                el.classList.add('dark-theme');
+            }
         } else {
-            // document.documentElement.classList.remove('dark');
-            document.getElementsByTagName('body')[0].classList.remove('dark');
+            document.body.classList.remove('dark');
+
+            const themes = document.getElementsByClassName('theme');
+            for (let el of themes) {
+                el.classList.remove('dark-theme');
+            }
         }
     }, [is_dark]);
 
